@@ -9,12 +9,15 @@ from pygame.locals import *
 from pygame.constants import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
+import numpy as np
 
 # IMPORT OBJECT LOADER
 from objloader import *
 
 pygame.init()
-viewport = (800,600)
+# viewport = (800,600)
+viewport = (0.8*np.array(pygame.display.set_mode().get_rect()[2:]))        # make viewport 80% the screen's resolution
+
 hx = viewport[0]/2
 hy = viewport[1]/2
 srf = pygame.display.set_mode(viewport, OPENGL | DOUBLEBUF)
